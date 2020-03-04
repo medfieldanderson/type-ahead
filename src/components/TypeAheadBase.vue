@@ -53,6 +53,16 @@
 			componentName: {
 				get() {return this.$options.extends.name}
 			},
+			currentUL: {
+				get () {
+					return this.name + "-list";
+				}
+			},
+			currentLI: {
+				get () {
+					return (this.navigationIndex >= 0) ? this.name + "-item-"  + this.navigationIndex : null;
+				}
+			},
 			debounceInterval: {
 				// getter that returns the wait interval between calls to a resource (in milliseconds)
 				get() { return this.intervalInMS; }
@@ -159,36 +169,22 @@
 						break;
 				}
 				console.log("navigationIndex: " + this.navigationIndex);
-				this.positionSelectionInList(event);
+				this.positionSelectionInList();
 			},
-			positionSelectionInList: function (event) {
-				// TODO: Finish this.
-				console.log("positionSelectionInList:  TypeAheadBase");
-				console.log(event);
-				console.log(this.$refs.taList);
-				// var targetUl = document.getElementById(this.$refs.taList.id);
-				// var list = this.$refs.taList;
-				// TODO: this works... but it only after on the previously "is-active" item.
-				this.$refs.taList.$vnode.elm.getElementsByClassName("type-ahead-list-item is-active")
-				var li = this.$refs.taList.$vnode.elm.getElementsByClassName("is-active");
-				this.$refs.taList.$vnode.elm.getElementsByClassName("type-ahead-list-item")
-				console.log(li);
-				
-
-				
-
+			positionSelectionInList: function () {
+				var ul = document.getElementById(this.currentUL);
+				var li = document.getElementById(this.currentLI)
+				ul.scrollTop =  (this.navigationIndex >= 3) ? li.offsetTop - (li.offsetHeight * 2) : 0;
 			},
 			shouldProcessKey: function (key) {
 				return (this.ignoreKeys.indexOf(key) === -1) ? true : false;	
 			},
 			setResult: function (index) {
 				console.log("setResult:  TypeAheadBase");
-
 				if(index >= 0){
 					// index is only defined on click; set the navigationIndex
 					this.navigationIndex = index;
 				}
-				
 				this.selectedIndex = this.navigationIndex;
 				this.setInputDisplay();
 				this.setSummaryDisplay();
