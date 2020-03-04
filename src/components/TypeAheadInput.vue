@@ -8,7 +8,7 @@
 			<input :id="name" :name="name" type="text" v-model="input"
 					class="type-ahead-input" placeholder="Search"
 					@keyup="onKeyUpEvent"
-					@focus="onFocusvent"
+					@focus="onFocusEvent"
 					@keydown.down="navigateList"
 					@keydown.up="navigateList"
 					@keydown.enter="onEnter">
