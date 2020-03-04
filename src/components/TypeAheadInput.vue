@@ -1,4 +1,3 @@
-// TODO: scrolling... experiment with @keyup.down event on input control below ... for scrollview, scrollTo etc...
 <template>
 	<div id="ta-input">
 		<div class="type-ahead-label">
