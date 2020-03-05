@@ -1,4 +1,4 @@
 module.exports = {
     filenameHashing: false,
-    publicPath: "/type-ahead/"
+    publicPath: "/vue/type-ahead/"
 }
