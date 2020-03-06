@@ -53,6 +53,7 @@ export default {
         width: 600px;
         overflow-x: auto;
         background-color: rgb(235, 235, 255);
+        scroll-behavior:smooth;
     }
     .type-ahead-list-item {
         list-style: none;
