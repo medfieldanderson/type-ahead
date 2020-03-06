@@ -10,7 +10,7 @@
 					@focus="onFocusEvent"
 					@keydown.down="navigateList"
 					@keydown.up="navigateList"
-					@keydown.enter="onEnter">
+					@keydown.enter.prevent="onEnter">
 		</div>
 	</div>
 </template>
