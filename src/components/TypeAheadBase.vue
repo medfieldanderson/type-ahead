@@ -158,7 +158,9 @@
 						}
 						break;
 					case "ArrowUp":
-						if(this.navigationIndex === 0 ){
+						if((this.list) && this.navigationIndex === -1){
+							this.navigationIndex = this.list.length - 1;
+						} else if (this.navigationIndex === 0 ){
 							this.navigationIndex = (this.list.length - 1)
 						}
 						else if((this.list) && this.list.length > 0 && this.navigationIndex > 0){
