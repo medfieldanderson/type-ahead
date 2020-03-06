@@ -1,6 +1,6 @@
 // FROM vuejs.org/v2/cookbook/packaging-sfc-for-npm.html
 // Import vue component
-import ProviderTypeAhead from '.ProviderTypeAhead.vue';
+import ProviderTypeAhead from './components/ProviderTypeAhead.vue';
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {

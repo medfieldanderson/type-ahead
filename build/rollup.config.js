@@ -6,6 +6,14 @@ export default {
     output: {
         name: 'ProviderTypeAhead',
         exports: 'named',
+        browser: true,
+        globals: {
+            'type-ahead-summary': 'TypeAheadSummary', 
+            'type-ahead-input': 'TypeAheadInput', 
+            'type-ahead-list': 'TypeAheadList', 
+            'type-ahead-base': 'TypeAheadBase', 
+            'provider-type-ahead': 'ProviderTypeAhead'
+        }
     },
     plugins: [
         commonjs(),

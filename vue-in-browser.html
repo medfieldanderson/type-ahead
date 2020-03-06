@@ -6,11 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src=".\dist\js\chunk-vendors.js"></script>
+    <script src=".\dist\js\app.js"></script>
+    <script src=".\dist\type-ahead.min.js"></script>
+    <div id="app">
+
+    </div>
     <div id="main">
         <h3>Import .vue files in regular HTML</h3>
         <p><input type="month" name="huh" id=""></p>
     </div>
     <div id="middle">
+        <provider-type-ahead name="servicing" label="Servicing Provider" intervalInMS="800" minLength="1"></provider-type-ahead>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, nobis a. Suscipit iusto error similique quisquam tempora illo impedit nobis. Exercitationem cum debitis aliquid quos delectus nulla doloremque optio hic? </p>
     </div>
     <div id="end">
