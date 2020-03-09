@@ -15,7 +15,9 @@ export default {
             'type-ahead-list': 'TypeAheadList', 
             'type-ahead-base': 'TypeAheadBase', 
             'provider-type-ahead': 'ProviderTypeAhead'
-        }
+        },
+        format: 'iife',
+        file: 'bundle.js'
     },
     plugins: [
         commonjs(),

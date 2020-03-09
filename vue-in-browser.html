@@ -6,13 +6,26 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src=".\dist\js\chunk-vendors.js"></script>
     <script src=".\dist\js\app.js"></script>
     <script src=".\dist\type-ahead.min.js"></script>
     <div id="app">
-
+        <type-ahead-input></type-ahead-input>
     </div>
+    <script>
+        import TypeAheadInput from TypeAheadInput;
+        Vue.component('type-ahead-input', TypeAheadInput);
+        const app = new new Vue({
+            el: "#app"
+        })
+    </script>
+
+    <type-ahead-summary></type-ahead-summary>
+    <type-ahead-base></type-ahead-base>
+    <provider-type-ahead></provider-type-ahead>
+    <TypeAheadList></TypeAheadList>
     <div id="main">
         <h3>Import .vue files in regular HTML</h3>
         <p><input type="month" name="huh" id=""></p>
