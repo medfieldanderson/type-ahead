@@ -8,6 +8,8 @@ export default {
         exports: 'named',
         browser: true,
         globals: {
+            'lodash': '_',
+            'axios':'axios',
             'type-ahead-summary': 'TypeAheadSummary', 
             'type-ahead-input': 'TypeAheadInput', 
             'type-ahead-list': 'TypeAheadList', 
