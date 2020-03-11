@@ -6,26 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src=".\dist\js\chunk-vendors.js"></script>
-    <script src=".\dist\js\app.js"></script>
-    <script src=".\dist\type-ahead.min.js"></script>
-    <div id="app">
-        <type-ahead-input></type-ahead-input>
-    </div>
-    <script>
-        import TypeAheadInput from TypeAheadInput;
-        Vue.component('type-ahead-input', TypeAheadInput);
-        const app = new new Vue({
-            el: "#app"
-        })
-    </script>
-
-    <type-ahead-summary></type-ahead-summary>
-    <type-ahead-base></type-ahead-base>
-    <provider-type-ahead></provider-type-ahead>
-    <TypeAheadList></TypeAheadList>
     <div id="main">
         <h3>Import .vue files in regular HTML</h3>
         <p><input type="month" name="huh" id=""></p>
@@ -34,9 +14,22 @@
         <provider-type-ahead name="servicing" label="Servicing Provider" intervalInMS="800" minLength="1"></provider-type-ahead>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, nobis a. Suscipit iusto error similique quisquam tempora illo impedit nobis. Exercitationem cum debitis aliquid quos delectus nulla doloremque optio hic? </p>
     </div>
+    <div id="app">
+        <provider-type-ahead name="boo" label="Massachusetts Provider"></provider-type-ahead>
+    </div>
+    <br>
     <div id="end">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, dolore pariatur corporis beatae cum sit aperiam ducimus, autem in ipsam impedit? Reprehenderit voluptate illo porro magnam ipsum ratione accusantium perspiciatis.</p>
     </div>
-    
+    <script src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src=".\dist\type-ahead.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        var app = new Vue ({
+            el: "#app"
+        });
+    </script>
+
 </body>
 </html>
