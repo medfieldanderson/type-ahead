@@ -1,15 +1,19 @@
 <template>
 	<div id="app">
-		<provider-type-ahead name="servicing" label="Servicing Provider" :intervalInMS="700" :minLength="1"/>
+		<provider-type-ahead name="servicing" label="Massachusetts Provider" :intervalInMS="700" :minLength="1"/>
+		<br>
+		<br>
+		<tx-provider-type-ahead name="tx-prov" label="Texas Provider" :intervalInMS="700" :minLength="1"/>
 	</div>
 </template>
 
 <script>
 	import ProviderTypeAhead from './components/ProviderTypeAhead.vue'
+	import TxProviderTypeAhead from './components/TxProviderTypeAhead.vue'
 
 	export default {
 		name: 'App',
-		components: { ProviderTypeAhead },
+		components: { TxProviderTypeAhead, ProviderTypeAhead },
 	}
 </script>
 
