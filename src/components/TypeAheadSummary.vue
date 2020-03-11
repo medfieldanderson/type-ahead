@@ -57,5 +57,6 @@
     .type-ahead-summary-value{
         width: 80%;
         margin-left: 1%;
+        text-align: left;
     }
 </style>
