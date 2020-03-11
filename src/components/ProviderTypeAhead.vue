@@ -29,7 +29,7 @@
     export default {
         extends: TypeAheadBase,
         name: "ProviderTypeAhead",
-        components: {  },
+        components: { TypeAheadBase },
         props: {
             intervalInMS: { type: Number, default: 500 },
             isAsync: { type: Boolean, default: true },
