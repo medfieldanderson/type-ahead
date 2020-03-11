@@ -5,7 +5,7 @@
                 @input-focus="processInputFocus"
                 @list-navigation="processListNavigation"
                 @set-result="setResult"/>
-        <type-ahead-list ref="taList" :list="list" :isOpen="isOpen">
+        <type-ahead-list ref="taList" :list="list" :isOpen="isOpen && hasResults">
             <template #type-ahead-list-slot >
                 <li v-for="(item, i) in list" :id="name+'-item-'+i" :list="list" :key="i" class="type-ahead-list-item"
                         @click="clickItem(i)" 
@@ -36,9 +36,6 @@
             minLength: { type: Number, default: 2 }
         },
         methods: { 
-            test: function () {
-                console.log("test: ProviderTypeAhead")
-            },
             middleInitial: function (middle) {
                 return (middle) ? middle.charAt(0) + "." : "";
             },
@@ -82,7 +79,7 @@
                 this.summary = [];
                 this.summary.push({"label": "ID/NPI", "value": this.selected.npi});
                 this.summary.push({"label": "Name", "value": this.selected.profile.first_name + " " + this.selected.profile.last_name});
-                // this.summary.push({"label": "Bio", "value": this.selected.profile.bio});
+                this.summary.push({"label": "Bio", "value": this.selected.profile.bio});
                 // this.summary
 			},
 			setControlValue: function () {
@@ -97,9 +94,11 @@
     div#ta-base {
         position: relative;
         z-index: 0;
-        background-color: rgba(237, 240, 246, 0.952);
+        /* background-color: rgba(237, 240, 246, 0.952); */
         display: block;    
         float: left;
         width: 600px;
+        height: 150px;
+        
     }
 </style>

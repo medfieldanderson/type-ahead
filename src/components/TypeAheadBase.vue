@@ -82,12 +82,6 @@
 			}
 		},
 		methods: {
-			test: function () {
-				console.log("test: TypeAheadBase")
-			},
-			doSomething: function () {
-				console.log("doSomething: TypeAheadBase");
-			},
 			clickItem: function (index) {
 				console.log("clickItem: TypeAheadBase", index);
 				this.setResult(index); 
