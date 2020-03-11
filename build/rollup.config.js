@@ -1,30 +1,38 @@
+import resolve from '@rollup/plugin-node-resolve'
+import globals from 'rollup-plugin-node-globals'
 import commonjs from 'rollup-plugin-commonjs'; // Convert CommonJS modules to ES6
 import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
 import buble from 'rollup-plugin-buble'; // Transpile/polyfill with reasonable browser support
 export default {
     input: 'src/wrapper.js', // Path relative to package.json
     output: {
+        format: 'iife',
+        file: 'bundle.js',
         name: 'ProviderTypeAhead',
         exports: 'named',
         browser: true,
         globals: {
             'lodash': '_',
-            'axios':'axios',
-            'type-ahead-summary': 'TypeAheadSummary', 
-            'type-ahead-input': 'TypeAheadInput', 
-            'type-ahead-list': 'TypeAheadList', 
-            'type-ahead-base': 'TypeAheadBase', 
-            'provider-type-ahead': 'ProviderTypeAhead'
+            'axios': 'axios',
+            'TypeAheadSummary': 'type-ahead-summary',
+            'TypeAheadInput': 'type-ahead-input',
+            'TypeAheadList': 'type-ahead-list',
+            'TypeAheadBase': 'type-ahead-base',
+            'ProviderTypeAhead': 'provider-type-ahead'
+
+            
+
         },
-        format: 'iife',
-        file: 'bundle.js'
     },
     plugins: [
+        resolve(),
         commonjs(),
         vue({
             css: true, // Dynamically inject css as a <style> tag
             compileTemplate: true, // Explicitly convert template to render function
         }),
         buble(), // Transpile to ES5
+        globals(),
     ],
+    external: ['lodash','axios'],
 };
