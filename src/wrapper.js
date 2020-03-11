@@ -6,7 +6,7 @@ import ProviderTypeAhead from './components/ProviderTypeAhead.vue';
 export function install(Vue) {
 	if (install.installed) return;
 	install.installed = true;
-	Vue.component('ProviderTypeAhead', ProviderTypeAhead);
+	Vue.component('provider-type-ahead', ProviderTypeAhead);
 }
 
 // Create module definition for Vue.use()
