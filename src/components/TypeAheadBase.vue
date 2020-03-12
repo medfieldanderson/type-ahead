@@ -218,3 +218,15 @@
 		}
 	}
 </script>
+
+<style scoped>
+    div#ta-base {
+        position: relative;
+        z-index: 0;
+        display: block;    
+        float: left;
+        width: 100%;
+        height: 150px;
+        
+    }
+</style>
