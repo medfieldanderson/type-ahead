@@ -103,13 +103,3 @@
     }
 </script>
 
-<style>
-    div#ta-base {
-        position: relative;
-        z-index: 0;
-        background-color: rgba(237, 240, 246, 0.952);
-        display: block;    
-        float: left;
-        width: 600px;
-    }
-</style>
