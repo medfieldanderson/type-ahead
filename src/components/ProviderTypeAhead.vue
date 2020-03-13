@@ -79,7 +79,9 @@
                 this.summary = [];
                 this.summary.push({"label": "ID/NPI", "value": this.selected.npi});
                 this.summary.push({"label": "Name", "value": this.selected.profile.first_name + " " + this.selected.profile.last_name});
-                this.summary.push({"label": "Bio", "value": this.selected.profile.bio});
+                if(this.selected.profile.bio){
+                    this.summary.push({"label": "Bio", "value": this.selected.profile.bio});
+                }
                 // this.summary
 			},
 			setControlValue: function () {
