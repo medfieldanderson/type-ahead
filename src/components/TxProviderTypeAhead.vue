@@ -17,7 +17,6 @@
             </template>
         </type-ahead-list>
 		<type-ahead-summary ref="taSummary" :summary="summary"/>
-
     </div>
 </template>
 
@@ -79,12 +78,9 @@
                 
                 this.summary = [];
                 this.summary.push({"label": "ID/Name", "value": this.selected.npi + " / " +  this.selected.profile.first_name + " " + this.selected.profile.last_name});
-                // this.summary.push({"label": "Name", "value": this.selected.profile.first_name + " " + this.selected.profile.last_name});
-                if(this.selected.specialties) {
+                if(this.selected.specialties[0].actor) {
                     this.summary.push({"label": "Specialty", "value": this.selected.specialties[0].actor});
                 }
-                // this.summary
-
                 if(this.selected.profile.languages){
                     var languages = "";
                     this.selected.profile.languages.forEach(element => {
@@ -92,12 +88,12 @@
                     });
                     this.summary.push({"label": "Languages", "value": languages});
                 }
-                this.summary.push({"label": "Bio", "value": this.selected.profile.bio})
-                
+                if(this.selected.profile.bio){
+                    this.summary.push({"label": "Bio", "value": this.selected.profile.bio});
+                }
 			},
 			setControlValue: function () {
                 console.log("setControlValue:  TxProviderTypeAhead");
-                
 			}
         }
     }
