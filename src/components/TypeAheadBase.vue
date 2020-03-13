@@ -1,24 +1,28 @@
 <template>
     <div id="ta-base"> 
-        <type-ahead-input ref="taInput" :input="input"
-                @input-action="processInputAction"
-                @input-focus="processInputFocus"
-                @list-navigation="processListNavigation"
-				@set-result="setResult"/>
-        <type-ahead-list ref="taList" :list="list" :isOpen="isOpen">
-            <template #type-ahead-list-slot >
-                <li v-for="(item, i) in list" :id="name+'-item-'+i" :list="list" :key="i" class="type-ahead-list-item"
-                        @click="clickItem(i)" 
-						:class="{ 'is-active': i === navigationIndex }">
-                    ({{i + 1}} of {{list.length}}) 
-                </li>
-            </template>
-        </type-ahead-list>
-		<type-ahead-summary ref="taSummary" :summary="summary"/>
-		
-    </div>
+		<div id="ta-container">
+			<type-ahead-label>{{msg}}</type-ahead-label>
+			<type-ahead-input ref="taInput" :input="input"
+					@input-action="processInputAction"
+					@input-focus="processInputFocus"
+					@list-navigation="processListNavigation"
+					@set-result="setResult"/>
+			<type-ahead-list ref="taList" :list="list" :isOpen="isOpen">
+				<template #type-ahead-list-slot >
+					<li v-for="(item, i) in list" :id="name+'-item-'+i" :list="list" :key="i" class="type-ahead-list-item"
+							@click="clickItem(i)" 
+							:class="{ 'is-active': i === navigationIndex }">
+						({{i + 1}} of {{list.length}}) 
+					</li>
+				</template>
+			</type-ahead-list>
+			<type-ahead-summary ref="taSummary" :summary="summary"/>
+			
+		</div>
+	</div>
 </template>
 <script>
+	import TypeAheadLabel from "./TypeAheadLabel.vue";
 	import TypeAheadInput from "./TypeAheadInput.vue";
 	import TypeAheadList from "./TypeAheadList.vue";
 	import TypeAheadSummary from "./TypeAheadSummary.vue";
@@ -27,7 +31,7 @@
 
 	export default {
 		name: 'TypeAheadBase',
-		components: { TypeAheadInput, TypeAheadList, TypeAheadSummary },
+		components: { TypeAheadLabel, TypeAheadInput, TypeAheadList, TypeAheadSummary },
 		props: {
             intervalInMS: { type: Number, required: true },
 			isAsync: { type: Boolean, default: false },
@@ -221,11 +225,18 @@
     div#ta-base {
         position: relative;
         z-index: 1;
-        float: left;
-        width: 100%;
+        width: 600px;
         height: 140px;
-		overflow-y:hidden;
-
-		/* border: 1px solid royalblue; */
+		/* overflow-y:hidden; */
+		padding: 1px;
+		border: .125px inset royalblue;
+		background-color: lavender;
     }
+	div.ta-row{
+		display: table-row;
+	}
+	div.ta-cell{
+		display: table-cell;
+		/* border: 1px dotted black; */
+	}
 </style>

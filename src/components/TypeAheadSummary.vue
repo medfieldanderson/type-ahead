@@ -39,39 +39,34 @@
 <style scoped>
     div#ta-summary{ 
         position: relative;
-        padding: 1px;
+        padding: 4px 2px;
         z-index: 0;
-        width: 600px;
-        height: 90px;
+        /* width: 600px; */
+        height: auto;
+        max-height: 90px;
         overflow-y: auto;
         scroll-behavior: smooth;
+
+        /* border: 1px dotted red; */
     }
     .type-ahead-summary-label, 
     .type-ahead-summary-value{
         color: black;
         float: left;
         font-size: 12px;
+
+        display: table-cell;
     }
-    /* div#ta-summary div:first-of-type{
-        opacity: 100%;
-        position: fixed;
-        width: 500px;
-        
-    }
-    div#ta-summary div:not(:first-of-type){
-        position: 20px;        
-    } */
     .type-ahead-summary-label{
-        width: 25%;
+        width: 15%;
         font-weight: bold;
         text-align: right;
-        /* overflow-y: auto; */
+        white-space: nowrap;
     }
     .type-ahead-summary-value{
-        width: 70%;
+        width: 75%;
         margin-left: 1%;
         text-align: left;
-        /* overflow-y: auto; */
     }
     .truncate{
         font-style: initial;

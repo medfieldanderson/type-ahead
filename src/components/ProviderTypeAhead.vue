@@ -1,23 +1,44 @@
 <template>
     <div id="ta-base">
-        <type-ahead-input ref="taInput" :input="input"
-                @input-action="processInputAction"
-                @input-focus="processInputFocus"
-                @list-navigation="processListNavigation"
-                @set-result="setResult"/>
-        <type-ahead-list ref="taList" :list="list" :isOpen="isOpen && hasResults">
-            <template #type-ahead-list-slot >
-                <li v-for="(item, i) in list" :id="name+'-item-'+i" :list="list" :key="i" class="type-ahead-list-item"
-                        @click="clickItem(i)" 
-                        :class="{ 'is-active': i === navigationIndex }" >
-                    {{item.profile.first_name}} {{middleInitial(item.profile.middle_name)}} 
-                    {{item.profile.last_name}}{{suffix(item.profile.title)}}
-                    {{item.npi}} 
-                </li>
-            </template>
-        </type-ahead-list>
-		<type-ahead-summary ref="taSummary" :summary="summary"/>
-
+        <div class="ta-table">
+            <div class="ta-row">
+                <div class="ta-table">
+                    <div class="ta-row">
+                        <div class="ta-cell">
+                            <type-ahead-label></type-ahead-label>
+                        </div>
+                        <div class="ta-cell">
+                            <type-ahead-input ref="taInput" :input="input"
+                                    @input-action="processInputAction"
+                                    @input-focus="processInputFocus"
+                                    @list-navigation="processListNavigation"
+                                    @set-result="setResult"/>
+                        </div>
+                    </div>
+                    <div class="ta-row">
+                        <div class="ta-cell"></div>
+                        <div class="ta-cell">
+                            <type-ahead-list ref="taList" :list="list" :isOpen="isOpen && hasResults">
+                                <template #type-ahead-list-slot >
+                                    <li v-for="(item, i) in list" :id="name+'-item-'+i" :list="list" :key="i" class="type-ahead-list-item"
+                                            @click="clickItem(i)" 
+                                            :class="{ 'is-active': i === navigationIndex }" >
+                                        {{item.profile.first_name}} {{middleInitial(item.profile.middle_name)}} 
+                                        {{item.profile.last_name}}{{suffix(item.profile.title)}}
+                                        {{item.npi}} 
+                                    </li>
+                                </template>
+                            </type-ahead-list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ta-row">
+                <div class="ta-cell">
+                    <type-ahead-summary ref="taSummary" :summary="summary"/>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 

@@ -54,7 +54,7 @@ export default {
         margin: 0;
         border: 1px solid #0a0909;
         height: 110px;
-        width: 70%;
+        width: 400px;
         overflow-x: auto;
         background-color: rgb(235, 235, 255);
         scroll-behavior:smooth;
