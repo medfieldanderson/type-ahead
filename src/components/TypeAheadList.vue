@@ -42,15 +42,19 @@ export default {
 <style scoped>
     div#ta-list {
         position: absolute;
-        z-index: 2;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 3;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 600px;
+    }
+    .type-ahead-list-spacer {
+        width: 30%;
     }
     .type-ahead-list{
         padding: 0;
         margin: 0;
         border: 1px solid #0a0909;
-        height: 120px;
-        width: 600px;
+        height: 110px;
+        width: 70%;
         overflow-x: auto;
         background-color: rgb(235, 235, 255);
         scroll-behavior:smooth;
@@ -59,15 +63,14 @@ export default {
         list-style: none;
         text-align: left;
         padding: 4px 2px;
-        font-size: 12px;
+        font-size: 11px;
         cursor: pointer;
     }
     .type-ahead-list-item:nth-of-type(odd) {
-        background-color: rgba(176, 174, 194, 0);
-        /* background-color: whitesmoke; */
+        background-color:lightsteelblue;
     }
     .type-ahead-list-item:nth-of-type(even) {
-        background-color: rgb(216, 225, 241);
+        background-color: lightblue;
     }
     .type-ahead-list-item.is-active,
     .type-ahead-list-item:hover{

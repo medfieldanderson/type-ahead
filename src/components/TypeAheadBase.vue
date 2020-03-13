@@ -43,10 +43,8 @@
 				list: [],
 				navigationIndex: -1,
 				selectedIndex: -1,
-				// summary: [{label: "ID", value: "value"},{label: "Name", value: "value"},{label: "Bio", value: "value"}]
+				// summary: [{label: "ID", value: "123"},{label: "Name", value: "Mo Jo"},{label: "Bio", value: "Really good doctor."}]
 				summary: []
-
-				
 			}
 		},
 		computed: {
@@ -222,11 +220,12 @@
 <style scoped>
     div#ta-base {
         position: relative;
-        z-index: 0;
-        display: block;    
+        z-index: 1;
         float: left;
         width: 100%;
-        height: 150px;
-        
+        height: 140px;
+		overflow-y:hidden;
+
+		/* border: 1px solid royalblue; */
     }
 </style>

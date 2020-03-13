@@ -1,9 +1,9 @@
 <template>
 	<div id="ta-input">
-		<div class="type-ahead-label">
+		<!-- <div class="type-ahead-label"> -->
 			<label :for="name" class="type-ahead-label">{{label}}:</label>
-		</div>
-		<div class="type-ahead-input">
+		<!-- </div> -->
+		<!-- <div class="type-ahead-input"> -->
 			<input :id="name" :name="name" type="text" v-model="input"
 					class="type-ahead-input" placeholder="Search"
 					@keyup="onKeyUpEvent"
@@ -11,7 +11,7 @@
 					@keydown.down="navigateList"
 					@keydown.up="navigateList"
 					@keydown.enter.prevent="onEnter">
-		</div>
+		<!-- </div> -->
 	</div>
 </template>
 
@@ -64,20 +64,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-	div.ta-input {
-		position: absolute;
-		z-index: 3;
+	div#ta-input {
+		position: relative;
+		z-index: 2;
+        width: 600px;
+        /* border: 1px dashed orangered */
+        
 	}
-    .type-ahead-input{
-        /* padding: 2px 2px; */
-        width: 100%;
-    }
-    .type-ahead-label{
-        float: left;
+    label.type-ahead-label{
+        width: 30%;
 		font-size: 14px;
         font-weight: bold;
-        color: rgb(50, 50, 233);
-        /* padding: 4px 2px; */
-		width: 100%;
+        color: darkblue;
+        text-align: right;
+        word-wrap: none;
+        /* border: 1px solid purple; */
+    }
+    input.type-ahead-input{
+        width: 70%;
+        /* float: right; */
+        
+        border: 1ps solid darkblue;
     }
 </style>
