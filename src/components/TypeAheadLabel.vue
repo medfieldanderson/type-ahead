@@ -8,6 +8,11 @@
     export default {
         name: 'TypeAheadLabel',
         computed: {
+            name: {
+                get () {
+                    return this.$parent.name + "-input";
+                }
+            },
             label: {
                 get () {
                     return this.$parent.label;
