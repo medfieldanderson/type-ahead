@@ -17,13 +17,10 @@
             name: {
                 get() { return this.$parent.name + "-summary"; }
             },
-            showSummary: {
-                get () {
-                    return ((this.$parent.showSummary) && (this.$parent.selected)) ? true : false;
-                }
+            showSummary: { 
+                get () { return ((this.$parent.showSummary) && (this.$parent.selected)) ? true : false; }
             },
-            summary: {
-                get () { return this.$parent.summary; }
+            summary: { get () { return this.$parent.summary; } 
             }
         },
         methods: {
@@ -44,7 +41,7 @@
         overflow-y: auto;
         scroll-behavior: smooth;
 
-        border: 1px dotted red;
+        border: 1px dotted black;
     }
     .type-ahead-summary-label, 
     .type-ahead-summary-value{
