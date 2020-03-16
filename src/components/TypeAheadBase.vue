@@ -35,7 +35,7 @@
 		props: {
             intervalInMS: { type: Number, required: true },
 			isAsync: { type: Boolean, default: false },
-			label: { type: String, required: true },
+			label: { type: String, required: false, default: "" },
 			name: { type: String, required: true },
 			showSummary: { type: Boolean, default: true}
 		},
