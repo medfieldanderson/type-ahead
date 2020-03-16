@@ -63,8 +63,6 @@ export default {
 	div#ta-input {
 		position: relative;
 		z-index: 0;
-        /* width: 600px; */
-        /* border: 5px inset red; */
 	}
     input.type-ahead-input{
         width: 400px;
