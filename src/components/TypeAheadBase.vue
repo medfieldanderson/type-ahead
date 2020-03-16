@@ -36,7 +36,8 @@
             intervalInMS: { type: Number, required: true },
 			isAsync: { type: Boolean, default: false },
 			label: { type: String, required: true },
-			name: { type: String, required: true }
+			name: { type: String, required: true },
+			showSummary: { type: Boolean, default: true}
 		},
 		data(){
 			return {
@@ -56,42 +57,29 @@
 				get() {return this.$options.extends.name}
 			},
 			currentUL: {
-				get () {
-					return this.name + "-list";
-				}
+				get () { return this.name + "-list"; }
 			},
 			currentLI: {
-				get () {
-					return (this.navigationIndex >= 0) ? this.name + "-item-"  + this.navigationIndex : null;
-				}
+				get () { return (this.navigationIndex >= 0) ? this.name + "-item-"  + this.navigationIndex : null; }
 			},
 			debounceInterval: {
-				// getter that returns the wait interval between calls to a resource (in milliseconds)
 				get() { return this.intervalInMS; }
 			},
 			hasResults: {
 				get() { return (this.list && this.list.length > 0) ? true : false; }
 			},
-			query: {
-				get() {
-					return this.input;
-				}
+			query: { get() { return this.input; }
 			},        
-			selected: {
-				get () {
-					return (this.selectedIndex >= 0) ? this.list[this.selectedIndex] : null;
-				}
+			selected: { get () { return (this.selectedIndex >= 0) ? this.list[this.selectedIndex] : null; }
 			}
 		},
 		methods: {
 			clickItem: function (index) {
 				console.log("clickItem: TypeAheadBase", index);
 				this.setResult(index); 
-
 			},
 			getData: function (query) {
 				console.log("getData: " + query + " passed to TypeAheadBase" + " OVERRIDE ME!");
-				// MUST BE OVERRIDDEN IN PARENT COMPONENT
 			},			
 			getThrottledData: function() {
 				console.log("getThrottledData: TypeAheadBase" + " debounceInterval:  " + this.debounceInterval);
@@ -224,14 +212,17 @@
 <style scoped>
     div#ta-base {
         position: relative;
-        z-index: 1;
+        z-index: auto;
         width: 600px;
-        height: 140px;
-		/* overflow-y:hidden; */
-		padding: 1px;
+        height: auto;
+		margin: 4px;
+		padding: 4px;
 		border: .125px inset royalblue;
 		background-color: lavender;
     }
+	div.ta-table{
+		display: table;
+	}
 	div.ta-row{
 		display: table-row;
 	}
