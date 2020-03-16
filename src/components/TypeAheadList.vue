@@ -42,7 +42,7 @@ export default {
 <style scoped>
     div#ta-list {
         position: absolute;
-        z-index: 3;
+        z-index: 1;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         width: 600px;
     }
@@ -51,7 +51,7 @@ export default {
     }
     .type-ahead-list{
         padding: 0;
-        margin: 0;
+        margin: 3px;
         border: 1px solid #0a0909;
         height: 110px;
         width: 400px;

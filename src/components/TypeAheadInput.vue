@@ -62,12 +62,13 @@ export default {
 <style scoped>
 	div#ta-input {
 		position: relative;
-		z-index: 2;
+		z-index: 0;
         /* width: 600px; */
         /* border: 5px inset red; */
 	}
     input.type-ahead-input{
         width: 400px;
+        margin-left: 3px;
         /* border: 5px dotted green; */
     }
 </style>
