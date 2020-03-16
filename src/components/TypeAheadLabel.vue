@@ -1,6 +1,6 @@
 <template>
     <div class="type-ahead-label">
-        <label :for="name" class="type-ahead-label">{{label}}:</label>
+        <label :for="name" class="type-ahead-label" v-if="showLabel">{{label}}:</label>
     </div>
 </template>
 
@@ -9,16 +9,14 @@
         name: 'TypeAheadLabel',
         computed: {
             name: {
-                get () {
-                    return this.$parent.name + "-input";
-                }
+                get () { return this.$parent.name + "-input"; }
             },
             label: {
-                get () {
-                    return this.$parent.label;
-                }
-            }
-        }
+                get () { return this.$parent.label; }
+            },
+			showLabel: { 
+                get() {return (this.label) ? true : false;}
+			}        }
     }
 </script>
 
