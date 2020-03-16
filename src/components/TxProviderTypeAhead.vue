@@ -53,7 +53,7 @@
         props: {
             intervalInMS: { type: Number, default: 500 },
             isAsync: { type: Boolean, default: true },
-            label: { type: String, required: true },
+            label: { type: String, required: false, default: "" },
             minLength: { type: Number, default: 2 }
         },
         methods: { 
