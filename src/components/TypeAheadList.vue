@@ -44,7 +44,6 @@ export default {
         position: absolute;
         z-index: 1;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        width: 600px;
     }
     .type-ahead-list-spacer {
         width: 30%;
@@ -55,6 +54,7 @@ export default {
         border: 1px solid #0a0909;
         height: 110px;
         width: 400px;
+        /* width: auto; */
         overflow-x: auto;
         background-color: rgb(235, 235, 255);
         scroll-behavior:smooth;
