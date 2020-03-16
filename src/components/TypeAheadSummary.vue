@@ -19,13 +19,11 @@
             },
             showSummary: {
                 get () {
-                    return ((this.$parent.selected)) ? true : false;
+                    return ((this.$parent.showSummary) && (this.$parent.selected)) ? true : false;
                 }
             },
             summary: {
-                get () {
-                    return this.$parent.summary;
-                }
+                get () { return this.$parent.summary; }
             }
         },
         methods: {
@@ -41,20 +39,18 @@
         position: relative;
         padding: 4px 2px;
         z-index: 0;
-        /* width: 600px; */
         height: auto;
         max-height: 90px;
         overflow-y: auto;
         scroll-behavior: smooth;
 
-        /* border: 1px dotted red; */
+        border: 1px dotted red;
     }
     .type-ahead-summary-label, 
     .type-ahead-summary-value{
         color: black;
         float: left;
         font-size: 12px;
-
         display: table-cell;
     }
     .type-ahead-summary-label{

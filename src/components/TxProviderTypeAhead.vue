@@ -42,30 +42,6 @@
     </div>
 </template>
 
-
-<!--
-<template>
-    <div id="ta-base">
-        <type-ahead-input ref="taInput" :input="input"
-                @input-action="processInputAction"
-                @input-focus="processInputFocus"
-                @list-navigation="processListNavigation"
-                @set-result="setResult"/>
-        <type-ahead-list ref="taList" :list="list" :isOpen="isOpen && hasResults">
-            <template #type-ahead-list-slot >
-                <li v-for="(item, i) in list" :id="name+'-item-'+i" :list="list" :key="i" class="type-ahead-list-item"
-                        @click="clickItem(i)" 
-                        :class="{ 'is-active': i === navigationIndex }" >
-                    {{item.profile.first_name}} {{middleInitial(item.profile.middle_name)}} 
-                    {{item.profile.last_name}}{{suffix(item.profile.title)}}
-                    {{item.npi}} 
-                </li>
-            </template>
-        </type-ahead-list>
-		<type-ahead-summary ref="taSummary" :summary="summary"/>
-    </div>
-</template>
--->
 <script>
     import TypeAheadBase from "./TypeAheadBase.vue";
 
@@ -124,8 +100,10 @@
                 
                 this.summary = [];
                 this.summary.push({"label": "ID/Name", "value": this.selected.npi + " / " +  this.selected.profile.first_name + " " + this.selected.profile.last_name});
-                if(this.selected.specialties[0].actor) {
-                    this.summary.push({"label": "Specialty", "value": this.selected.specialties[0].actor});
+                if(this.selected.specialties[0]) {
+                    if(this.selected.specialties[0].actor){
+                        this.summary.push({"label": "Specialty", "value": this.selected.specialties[0].actor});
+                    }
                 }
                 if(this.selected.profile.languages){
                     var languages = "";
@@ -144,4 +122,3 @@
         }
     }
 </script>
-
