@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<provider-type-ahead name="servicing" label="Servicing Provider" :intervalInMS="700" :minLength="1" :showSummary="false"/>
-		<tx-provider-type-ahead name="tx-prov" label="Texas Provider" :intervalInMS="400" :minLength="1" :showSummary="false"/>
+		<provider-type-ahead name="servicing" label="Servicing Provider" :intervalInMS="700" :minLength="1" :showSummary="true"/>
+		<tx-provider-type-ahead name="tx-prov" label="Texas Provider" :intervalInMS="400" :minLength="1" :showSummary="true"/>
 	</div>
 </template>
 
