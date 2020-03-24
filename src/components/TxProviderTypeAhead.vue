@@ -68,7 +68,7 @@
                 console.log("getData: TxProviderTypeAhead")
 
                 this.input = value;
-                var userKey = "ff62eebdbd4aa19116b8edcd583e8035";
+                var userKey = "7dd9c32247d22730288c9c94176b6d17";
                 var url = "https://api.betterdoctor.com/2016-03-01/doctors?location=tx&limit=50&user_key=" + userKey + 
                             "&query=&insurance_uid=cigna-cignahmo&name=" + this.input;
                 
